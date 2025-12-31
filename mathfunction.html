@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Math Functions in JavaScript</title>
+
+<style>
+body{
+    
+    text-align:center;
+    background:#f2f2f2;
+    padding-top:40px;
+}
+input{
+    padding:5px;
+    font-size:14px;
+}
+button{
+    padding:8px 10px;
+    font-size:14px;
+    cursor:pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#result{
+    margin-top:20px;
+    font-size:18px;
+}
+table {
+    font-size: 18px;
+    border-spacing: 10px;
+    text-align: left;
+    margin: 0 auto;   /* ✅ This centers the table */
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Math Functions Demonstration</h1>
+
+Enter a Number: <input type="number" id="num"><br><br>
+Enter a List of Numbers : <input type="text" id="numlist"><br><br>
+
+<button onclick="calculate()">Show Math Functions</button>
+
+<div id="result"></div>
+<script>
+function calculate(){
+    let n = parseFloat(document.getElementById("num").value);
+    let list = document.getElementById("numlist").value.split(",").map(Number);
+
+    let SquareRoot = Math.sqrt(n);
+    let Square = Math.pow(n,2); 
+    let Round = Math.round(n);
+    let Floor = Math.floor(n);  
+    let Ceil = Math.ceil(n);
+    let Random = Math.random();
+    let Max = Math.max(...list);
+    let Min = Math.min(...list);
+    let sign = Math.sign(n);
+    let Cube = Math.pow(n,3);
+    let Absolute = Math.abs(n);
+    
+    var output =
+    "<table>" +
+         
+    "<tr><td><b>Given Number :</b></td><td>" + n + "</td></tr>" +
+    "<tr><td>Square Root :</td><td>" + SquareRoot + "</td></tr>" +
+    "<tr><td>Square (n²) :</td><td>" + Square + "</td></tr>" +
+    "<tr><td>Cube (x³) :</td><td>" + Cube + "</td></tr>" +
+    "<tr><td>Round :</td><td>" + Round + "</td></tr>" +
+    "<tr><td>Floor :</td><td>" + Floor + "</td></tr>" +
+    "<tr><td>Ceil :</td><td>" + Ceil + "</td></tr>" +
+    "<tr><td>Absolute Value :</td><td>" + Absolute + "</td></tr>" +
+    "<tr><td>Sign :</td><td>" + sign + "</td></tr>" +
+    "<tr><td>Random Numbers between (0-1) :</td><td>" + Random + "</td></tr>" +
+
+    "<tr><td><br><br><b>Number List :</b></td><td>" + list + "</td></tr>" +
+    "<tr><td>Maximum from List :</td><td>" + Max + "</td></tr>" +
+    "<tr><td>Minimum from List :</td><td>" + Min + "</td></tr>" +
+    "</table>";
+
+        document.getElementById("result").innerHTML = output;
+  
+}
+</script>
+
+</body>
+</html>

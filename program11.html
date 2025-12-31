@@ -1,0 +1,107 @@
+<!-- Create a HTML registration form and validate the form using JavaScript code. The validation should include the following:
+1. Name validation/Mandatory field validation
+2. password validation
+3. Email validation
+4. Mobile number validation -->
+<html>
+    <head>
+        <title>Registration Form with Validation</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            form {
+                background: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                margin: auto;
+            }
+            input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            input[type="submit"] {
+                background-color: #5cb85c;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #4cae4c;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Registration Form</h2>
+            <form id="registrationForm" name="registrationForm" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" >
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+            
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" >
+            <p id="demo"></p>
+            <input type="submit" value="Register">
+        </form>
+
+        <script>
+            function validateForm() {
+                let isValid = true;
+
+                // Name validation
+                var name = document.registrationForm.name.value;
+                if (name == "") {
+                    alert("Name is required.");
+                     return false;
+                } 
+
+                // Password validation
+                var password = document.registrationForm.password.value;
+                if (password.length < 6) {
+                   alert ("Password must be at least 6 characters long.");
+                    return false;
+                }
+
+   
+                // Email validation
+                var email = document.registrationForm.email.value;
+                const atposition =email.indexOf("@");
+                const dotposition =email.lastIndexOf(".");
+                if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length) 
+                {
+                    alert('Please enter a valid email address. \natposition:'+atposition+'\n dotposition:'+dotposition);
+                    return false;
+                }
+                
+
+                // Mobile number validation
+            let mobile = document.registrationForm.mobile.value;
+            if (isNaN(mobile) || mobile.length !== 10) {
+                document.getElementById("demo").innerHTML = " Invalid mobile number!";
+                alert("Please enter a valid 10-digit mobile number.");
+                return false;
+            } else {
+                document.getElementById("demo").innerHTML = " Mobile number is valid!";
+            }
+
+            // All validations passed
+            alert("Registration successful!");
+            return true;
+        }
+        </script>
+    </body> 
+</html>

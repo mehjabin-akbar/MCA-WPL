@@ -1,0 +1,46 @@
+<!-- Develop a JavaScript Event Handling mechanism to change the background colour of an HTML page. -->
+ <html>
+    <head>
+        <title>JavaScript Event Handling to Change Background Colour</title>
+        <style>
+            body {
+                
+                text-align: center;
+                padding: 200px;
+            }
+            h1 {
+                color: #6c135f;
+                margin-bottom: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #008CBA;
+                color: white;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: #007B9E;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Change Background Colour with <br>JavaScript Event Handling</h1><br><br>
+        <button id="Buttoncolor">Change Background Colour</button>
+
+        <script>
+            const button = document.getElementById('Buttoncolor');
+
+            button.addEventListener('click', Bgcolorchange);
+
+            function Bgcolorchange()
+            {
+                const change = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#33FFF5', '#F5FF33'];
+                const randomColor = change[Math.floor(Math.random() * change.length)];
+                document.body.style.backgroundColor = randomColor;
+            }
+                
+        </script>
+    </body>
+ </html>

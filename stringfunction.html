@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>String Functions</title>
+
+<style>
+    body {
+        font-family: "Times New Roman", serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding-top: 40px;
+    }
+    input {
+        padding: 5px;
+        font-size: 14px;
+    }
+    button {
+        padding: 8px 10px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    #output {
+        font-size: 18px;
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+    }
+    table {
+        font-size: 18px;
+        border-spacing: 10px;
+        text-align: left;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>String Functions Demonstration</h1><br>
+
+Enter First String:
+<input type="text" id="str1"><br><br>
+
+Enter Second String:
+<input type="text" id="str2"><br><br>
+
+<button onclick="showStringFunctions()">Show Results</button>
+
+<div id="output"></div>
+
+<script>
+function showStringFunctions() {
+
+    var str1 = document.getElementById("str1").value;
+    var str2 = document.getElementById("str2").value;
+    var str = str1.concat(str2);
+    let length = str.length;
+    let upper = str.toUpperCase();
+    let lower = str.toLowerCase();
+    let charAt4 = str.charAt(4);
+    let replaceStr = str.replace('Java','Type');
+    let sliceStr = str.slice(0,4);
+    let substringStr = str.substring(11,18);
+    let indexOfS = str.indexOf('S');
+
+    var html =
+    "<table>" +
+    "<tr><td><b>First String :</b></td><td>" + str1 + "</td></tr>" +
+    "<tr><td><b>Second String :</b></td><td>" + str2 + "</td></tr>" +
+    "<tr><td><b>Concatenated :</b></td><td>" + str + "</td></tr>" +
+    "<tr><td><b>Length :</b></td><td>" + length + "</td></tr>" +
+    "<tr><td><b>Uppercase :</b></td><td>" + upper + "</td></tr>" +
+    "<tr><td><b>Lowercase :</b></td><td>" + lower + "</td></tr>" +
+    "<tr><td><b>Character at index 4 :</b></td><td>" + charAt4 + "</td></tr>" +
+    "<tr><td><b>Replace 'Java' with 'Type' :</b></td><td>" + replaceStr + "</td></tr>" +
+    "<tr><td><b>Slice (0,4) :</b></td><td>" +sliceStr + "</td></tr>" +
+    "<tr><td><b>Substring (11,18) :</b></td><td>" + substringStr + "</td></tr>" +
+    "<tr><td><b>Index of 'S' :</b></td><td>" + indexOfS + "</td></tr>" +
+    "</table>";
+
+    document.getElementById("output").innerHTML = html;
+}
+</script>
+
+</body>
+</html>

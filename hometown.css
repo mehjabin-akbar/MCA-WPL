@@ -1,0 +1,66 @@
+
+
+.top-images {
+    display: flex;           /* put images in one row */
+    justify-content: center; /* center them */
+    gap: 0px;               /* spacing between images */
+    }
+
+.top-images img {
+    width: 33%;              /* 3 images share width */
+    height: 300px;           /* same height */
+    object-fit: cover;       /* crop properly */
+    border-radius: 0px;
+    }
+.top-images h1 {
+    position: absolute;    /* place on top of images */
+    top: 125px;              /* vertically center */
+    left: 50%;             /* horizontally center */
+    transform: translate(-50%, -50%); /* center exactly */
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    background: transparent; /* transparent black box for readability */
+    padding: 10px 20px;
+    border-radius: 8px;
+    }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 300px); /* fixed width for each box */
+    gap: 30px; /* reduce spacing if needed */
+    justify-content: center; /* center the grid */
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px;
+    background-color: rgb(171, 237, 237);
+    border-radius: 20pc;
+    padding-bottom: 30px;
+}
+
+
+.place {
+      text-align: center;
+      border-radius: 10px;
+      overflow: hidden;
+      background: transparent;
+     
+    }
+
+.place img {
+      width: 60%;
+      height: 200px;
+      border-radius: 50px;
+      object-fit: cover; /* keeps images neat */
+    }
+
+.place h3 {
+      margin: 10px 0 5px;
+      color: #2c3e50;
+    }
+
+.place p {
+    padding: 0 10px 10px;
+    font-size: 14px;
+    color: #555;
+    }

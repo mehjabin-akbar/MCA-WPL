@@ -1,0 +1,67 @@
+<!-- Create a program using the JavaScript Event Listener to add multiple events on the same button. -->
+ <html>
+    <head>
+        <title>JavaScript Event Listener Example</title>
+        <style>
+            body {
+                
+                background-color: #f0f0f0;
+                text-align: center;
+                padding: 50px;
+            }
+            h1{
+                color: #021851;
+                padding-bottom: 16px    ;
+            }
+            p {
+                font-size: 20px;
+                color: #1b0303;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            </style>
+        
+    </head>
+    <body>
+        <h1>JavaScript Event Listener Example</h1>
+        <h3>Try the button to see multiple events in action.</h3><br><br>
+         <button id="myButton" >Click Me!</button>
+        <p id="message"></p>
+       
+        <script>
+        let x=document.getElementById("myButton");
+        x.addEventListener("click",FunctionClick);
+        x.addEventListener("mouseout",MouseOutFunction);
+        x.addEventListener("mouseover",MouseOverFunction);
+
+        
+            function FunctionClick()
+            {
+                document.getElementById("message").innerHTML+=" <br> Button Clicked!<br";
+            }
+
+            function MouseOutFunction()
+            {
+                document.getElementById("message").innerHTML+=" <br> Mouse Out Event Triggered!<br";
+            }
+
+            function MouseOverFunction()
+            {
+                document.getElementById("message").innerHTML+=" <br> Mouse Over Event Triggered!<br";
+            }
+
+        
+        </script>
+    </body>
+ </html>

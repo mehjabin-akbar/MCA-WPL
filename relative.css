@@ -1,0 +1,30 @@
+.box {
+    width: 150px;
+    height: 150px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box1 {
+    background-color: crimson;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.box2 {
+    background-color: darkblue;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+
+.box3 {
+    background-color: darkgreen;
+    position: relative;
+    top: 60px;
+    left: 60px;
+}
